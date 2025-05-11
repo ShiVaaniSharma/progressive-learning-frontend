@@ -13,3 +13,11 @@ html,body{
     width: 100%;
     background-color: rgb(44, 44, 44);
 }
+h2{
+    font-size: 3.5em;
+    margin-bottom: 0.5em;
+    color: transparent;
+/*     z-index: 99; */
+    /* text-shadow: 2px 2px 4px rgba(0,0,0,0.7); */
+    -webkit-text-stroke: 2px #ffffff; /* stroke width and color */
+}
