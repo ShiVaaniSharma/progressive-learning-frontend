@@ -8,15 +8,18 @@
 /* Centering container */
 body, html {
   height: 100%;
-  margin: 0;
+  width: 100%;
 }
-
+#main{
+  height: 100%;
+  width: 100%;
+}
 .container {
   display: flex;
   justify-content: center;  /* Center horizontally */
-  align-items: center;      /* Center vertically */
-  height: 100vh;
-  background-color: #f0f0f0;
+  align-items: center; 
+  height: 12%;
+  background-color: red;
 }
 
 /* Card styling */
@@ -24,6 +27,11 @@ body, html {
   background-color: white;
   padding: 20px 30px;
   border-radius: 10px;
+  justify-content: center;
+  height: 70%;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
