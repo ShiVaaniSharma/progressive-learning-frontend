@@ -15,7 +15,7 @@
         }
 
         .widget-container {
-            width: 1000px;
+            width: 100%;
             max-width: 95%;
             background-color: #4A4A4A;
             display: flex;
