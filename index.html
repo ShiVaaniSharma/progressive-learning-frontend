@@ -3,26 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>WhatsApp Screenshot Generator</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-    <div class="widget-container">
-        <div class="header-section">
-            <div class="header-placeholder-text">
-                Whatsapp chat creator
-            </div>
+    <div class="controls-container">
+        <h2>Customize Message</h2>
+        <div class="control-group">
+            <label for="contactName">Contact Name:</label>
+            <input type="text" id="contactName" value="Friend">
         </div>
-        <div class="main-split-section">
-            <div class="content-column left-column">
-                <h2 class="column-heading">features</h2>
+        <div class="control-group">
+            <label for="messageText">Message Text:</label>
+            <textarea id="messageText" rows="3">Hello there! How are you?</textarea>
+        </div>
+        <div class="control-group">
+            <label for="messageTime">Time (e.g., 10:30 AM):</label>
+            <input type="text" id="messageTime" value="10:30 AM">
+        </div>
+        <div class="control-group">
+            <label for="messageDate">Date (or "TODAY", "YESTERDAY"):</label>
+            <input type="text" id="messageDate" value="TODAY">
+        </div>
+        <div class="control-group">
+            <label for="messageType">Message Type:</label>
+            <select id="messageType">
+                <option value="sent">Sent (by me)</option>
+                <option value="received">Received (by them)</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label for="readStatus">Read Status (for sent messages):</label>
+            <select id="readStatus">
+                <option value="none">None (for received)</option>
+                <option value="sent">Sent (1 grey tick)</option>
+                <option value="delivered">Delivered (2 grey ticks)</option>
+                <option value="read">Read (2 blue ticks)</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label for="showDateSeparator">Show Date Separator:</label>
+            <input type="checkbox" id="showDateSeparator" checked>
+        </div>
+        <button id="addMessageBtn">Add Message to Chat</button>
+        <button id="clearChatBtn">Clear Chat</button>
+        <p class="note">Use your browser's/OS's screenshot tool to capture the preview.</p>
+    </div>
+
+    <div class="phone-frame">
+        <div class="whatsapp-chat-container">
+            <div class="chat-header">
+                <img src="https://via.placeholder.com/40/E0E0E0/000000?text=A" alt="Avatar" class="avatar">
+                <div class="contact-info">
+                    <span id="previewContactName" class="contact-name">Friend</span>
+                    <span class="contact-status">online</span>
+                </div>
+                <div class="header-icons">
+                    <i class="fas fa-video"></i>
+                    <i class="fas fa-phone"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
             </div>
-            <div class="content-column right-column">
-                <h2 class="column-heading">mobile ui for whatsapp</h2>
+            <div class="chat-messages" id="chatMessagesArea">
+                <!-- Messages will be added here by JavaScript -->
+            </div>
+            <div class="chat-input-bar-fake">
+                 <i class="far fa-smile"></i>
+                 <input type="text" placeholder="Type a message" disabled>
+                 <i class="fas fa-paperclip"></i>
+                 <i class="fas fa-camera"></i>
             </div>
         </div>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
