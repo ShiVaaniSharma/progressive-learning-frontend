@@ -76,15 +76,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Scroll to bottom
         chatMessagesArea.scrollTop = chatMessagesArea.scrollHeight;
 
-        // Optional: Clear message text for next entry
-        // messageTextInput.value = '';
+      
     });
 
     clearChatBtn.addEventListener('click', () => {
-        chatMessagesArea.innerHTML = ''; // Clear all messages
-        // Optionally, reset other fields like contact name etc.
-        // contactNameInput.value = "Friend";
-        // previewContactName.textContent = "Friend";
+        chatMessagesArea.innerHTML = ''; 
+     
     });
 });
 
