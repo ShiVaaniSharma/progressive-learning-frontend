@@ -138,3 +138,13 @@
     document.getElementById("result").innerText = "You selected: " + result;
   };
 
+
+
+
+
+
+
+
+
+
+// adding more functions next day 
