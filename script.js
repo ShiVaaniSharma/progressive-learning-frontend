@@ -132,6 +132,64 @@ animate();
 
 
 
+(() => {
+
+ 
+
+ 
+
+  const button = section.querySelector(
+    ".magnetic-demo-button"
+  );
+
+  const text = section.querySelector(
+    ".magnetic-demo-button-text"
+  );
+
+  // Disable magnetic movement on touch devices
+
+  if (window.matchMedia("(hover: none)").matches) {
+    return;
+  }
+
+  const strength = 0.3;
+  const textStrength = 0.5;
+
+  button.addEventListener("mousemove", (event) => {
+
+    const rect = button.getBoundingClientRect();
+
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    const x = event.clientX - centerX;
+    const y = event.clientY - centerY;
+
+    // Move the button
+
+    button.style.transform = `
+      translate(${x * strength}px, ${y * strength}px)
+    `;
+
+    // Move the text independently
+
+    text.style.transform = `
+      translate(
+        ${x * textStrength}px,
+        ${y * textStrength}px
+      )
+    `;
+
+  });
+
+  button.addEventListener("mouseleave", () => {
+
+    button.style.transform = "translate(0, 0)";
+    text.style.transform = "translate(0, 0)";
+
+  });
+
+})();
 
 
 
