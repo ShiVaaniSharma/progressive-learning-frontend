@@ -30,6 +30,102 @@
         <h2>going to get something amezing here in future </h2>
     </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+  <h1>MAKE IT<br>GLOW.</h1>
+  <p>Move your mouse ✨</p>
+</div>
+
+<script>
+const dots = [];
+const count = 20;
+
+for (let i = 0; i < count; i++) {
+  const dot = document.createElement("div");
+  dot.className = "dot";
+  document.body.appendChild(dot);
+
+  dots.push({
+    element: dot,
+    x: 0,
+    y: 0
+  });
+}
+
+let mouseX = 0;
+let mouseY = 0;
+
+window.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+function animate() {
+  let x = mouseX;
+  let y = mouseY;
+
+  dots.forEach((dot, index) => {
+    dot.x += (x - dot.x) * 0.25;
+    dot.y += (y - dot.y) * 0.25;
+
+    dot.element.style.left = dot.x + "px";
+    dot.element.style.top = dot.y + "px";
+
+    const scale = 1 - index / count;
+    dot.element.style.opacity = scale;
+    dot.element.style.transform =
+      `translate(-50%, -50%) scale(${scale})`;
+
+    x = dot.x;
+    y = dot.y;
+  });
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     <script src="script.js"></script>
 </body>
 </html>
